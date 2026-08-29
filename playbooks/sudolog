@@ -1,0 +1,12 @@
+/var/log/sudo.log
+{
+    missingok
+    daily
+    compress
+    minsize 100M
+    maxsize 200M
+    maxage 7
+    copytruncate
+    rotate 7
+    notifempty
+}

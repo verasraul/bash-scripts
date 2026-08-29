@@ -1,0 +1,13 @@
+---
+- name: Copy file to all hosts with proper permissions
+  hosts: all
+  become: true  # Elevate to root if using non-root user with sudo
+  tasks:
+    - name: Copy file to remote hosts
+      copy:
+        src: /Users/rveras1/playbooks/sudolog
+        dest: /etc/logrotate.d/sudolog
+        owner: root
+        group: root
+        mode: '0644'
+

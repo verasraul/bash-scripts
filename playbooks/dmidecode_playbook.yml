@@ -1,0 +1,13 @@
+---
+- name: Run dmidecode command
+  hosts: my_hosts
+  become: true
+  tasks:
+    - name: Run dmidecode command and capture output
+      command: sudo dmidecode -s system-manufacturer
+      register: dmidecode_output
+
+    - name: Display dmidecode output
+      debug:
+        var: dmidecode_output.stdout
+
